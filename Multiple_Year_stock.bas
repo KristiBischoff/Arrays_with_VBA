@@ -1,0 +1,60 @@
+Attribute VB_Name = "Module1"
+Sub totalstock()
+'Create a script that will loop through each year of stock data and
+'grab the total amount of volume each stock had over the year.
+
+For Each ws In Worksheets
+
+Dim wsname As String
+Dim ticker As String
+
+Dim total As Double
+total = 0
+Dim summary_table As Integer
+
+summary_table = 2
+
+
+wsname = ws.Name
+MsgBox (wsname)
+
+
+
+For i = 2 To 705714
+
+    If Cells(i + 1, 1).Value <> Cells(i, 1).Value Then
+    
+    
+    ticker = ws.Cells(i, 1).Value
+
+    
+    total = total + ws.Cells(i, 7).Value
+    
+    ws.Range("I1").Value = "Ticker"
+    ws.Range("J1").Value = "Total Stock Volume"
+    
+    
+    
+    
+    ws.Range("I" & summary_table).Value = ticker
+    ws.Range("J" & summary_table).Value = total
+    
+    summary_table = summary_table + 1
+    
+    
+    total = 0
+    
+    
+    Else
+    total = total + ws.Cells(i, 7).Value
+
+
+
+
+End If
+
+    Next i
+
+        Next ws
+
+End Sub

@@ -1,6 +1,4 @@
-# Visual Basic for Applications
-
-## Stock market analyst
+# Stock Market Spreadsheet Analysis with VBA
 
 ![stock Market](Images/stockmarket.jpg)
 
